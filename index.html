@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resolucio Interactiva d'Electroquímica</title>
+    <title>Resolucio Exercicis d'Electroquímica</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -60,6 +60,12 @@
          .result-display .ml-4 { /* Mantenir indentació */
              margin-left: 1rem;
          }
+         .fixed-value-display { /* Nou estil per mostrar valors E° fixos */
+            @apply p-3 bg-sky-50 border border-sky-100 rounded-md text-center;
+         }
+         .fixed-value-display span {
+            @apply font-semibold text-sky-800;
+         }
 
     </style>
 </head>
@@ -67,7 +73,7 @@
 
     <header class="bg-gradient-to-r from-sky-600 to-cyan-600 text-white shadow-md sticky top-0 z-50">
         <div class="container mx-auto px-6 py-4">
-            <h1 class="text-2xl md:text-3xl font-bold">Resolucio Interactiva d'Exercicis d'Electroquímica</h1>
+            <h1 class="text-2xl md:text-3xl font-bold">Resolucio Exercicis d'Electroquímica</h1>
             <p class="text-lg font-semibold mt-1">12a Sessió problemes</p>
         </div>
     </header>
@@ -100,16 +106,14 @@
         <section id="ex114" class="mb-12 p-6 rounded-lg shadow-lg section-bg-light">
              <h2 class="text-sky-700 border-b-2 border-sky-200 pb-2 mb-6">Exercici 114: Pila Cd/Ag</h2>
              <p class="mb-4"><strong>Enunciat:</strong> A partir dels potencials estàndard de reducció, establiu per les parelles \( \text{Cd}^{2+}/\text{Cd} \) i \( \text{Ag}^{+}/\text{Ag} \) connectades formant una pila: a) Quina parella actuarà com a ànode i quina com a càtode, b) El sentit del moviment dels electrons, cations i anions, c) Notació esquemàtica de la pila, d) Processos anòdic, catòdic i global, e) \(E^{o}\) de la pila.</p>
-             <div class="interactive-block-light slider-container">
-                 <h3 class="text-lg font-semibold mb-4 text-center text-sky-700 !mt-0 !border-none">Calculadora Interactiva Pila Cd/Ag</h3>
-                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
-                     <div>
-                         <div class="slider-label"><label for="e0_cd_114">\(E^{\circ}(\text{Cd}^{2+}/\text{Cd})\) (V):</label><span id="e0_cd_114_value">-0.40</span></div>
-                         <input type="range" id="e0_cd_114" min="-2.5" max="2.5" step="0.01" value="-0.40">
+             <div class="interactive-block-light">
+                 <h3 class="text-lg font-semibold mb-4 text-center text-sky-700 !mt-0 !border-none">Càlcul Pila Cd/Ag (Valors Estàndard)</h3>
+                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                     <div class="fixed-value-display">
+                         \(E^{\circ}(\text{Cd}^{2+}/\text{Cd}) = \) <span>-0.40 V</span>
                      </div>
-                     <div>
-                         <div class="slider-label"><label for="e0_ag_114">\(E^{\circ}(\text{Ag}^{+}/\text{Ag})\) (V):</label><span id="e0_ag_114_value">0.80</span></div>
-                         <input type="range" id="e0_ag_114" min="-2.5" max="2.5" step="0.01" value="0.80">
+                     <div class="fixed-value-display">
+                         \(E^{\circ}(\text{Ag}^{+}/\text{Ag}) = \) <span>+0.80 V</span>
                      </div>
                  </div>
                  <div id="result_114" class="result-display">
@@ -120,19 +124,17 @@
         <section id="ex116" class="mb-12 p-6 rounded-lg shadow-lg section-bg-white">
             <h2 class="text-sky-700 border-b-2 border-sky-200 pb-2 mb-6">Exercici 116: Pila Pb/Ag</h2>
             <p class="mb-4"><strong>Enunciat:</strong> Una pila està formada per \( \text{Pb}/\text{Pb}^{2+}//\text{Ag}^{+}/\text{Ag} \) i funciona a concentració 1 M per a cada ió. Calculeu el valor \(E^{\circ}\) i indiqueu si el procés és espontani.</p>
-            <div class="interactive-block slider-container">
-                <h3 class="text-lg font-semibold mb-4 text-center text-sky-700 !mt-0 !border-none">Calculadora Interactiva Pila Pb/Ag</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
-                    <div>
-                        <div class="slider-label"><label for="e0_pb_116">\(E^{\circ}(\text{Pb}^{2+}/\text{Pb})\) (V):</label><span id="e0_pb_116_value">-0.13</span></div>
-                        <input type="range" id="e0_pb_116" min="-2.5" max="2.5" step="0.01" value="-0.13">
-                    </div>
-                    <div>
-                        <div class="slider-label"><label for="e0_ag_116">\(E^{\circ}(\text{Ag}^{+}/\text{Ag})\) (V):</label><span id="e0_ag_116_value">0.80</span></div>
-                        <input type="range" id="e0_ag_116" min="-2.5" max="2.5" step="0.01" value="0.80">
-                    </div>
-                </div>
-                <div id="result_116" class="result-display">
+            <div class="interactive-block">
+                 <h3 class="text-lg font-semibold mb-4 text-center text-sky-700 !mt-0 !border-none">Càlcul Pila Pb/Ag (Valors Estàndard)</h3>
+                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                     <div class="fixed-value-display">
+                         \(E^{\circ}(\text{Pb}^{2+}/\text{Pb}) = \) <span>-0.13 V</span>
+                     </div>
+                     <div class="fixed-value-display">
+                         \(E^{\circ}(\text{Ag}^{+}/\text{Ag}) = \) <span>+0.80 V</span>
+                     </div>
+                 </div>
+                 <div id="result_116" class="result-display">
                     </div>
             </div>
         </section>
@@ -156,7 +158,7 @@
                         <input type="range" id="temp_115" min="0" max="100" step="1" value="25">
                     </div>
                 </div>
-                <div id="result_115" class="result-display">
+                 <div id="result_115" class="result-display">
                     </div>
             </div>
         </section>
@@ -164,19 +166,17 @@
         <section id="ex112" class="mb-12 p-6 rounded-lg shadow-lg section-bg-white">
             <h2 class="text-sky-700 border-b-2 border-sky-200 pb-2 mb-6">Exercici 112: Pila Mg/Ag</h2>
             <p class="mb-4"><strong>Enunciat:</strong> Una cel·la galvànica està formada per un elèctrode de magnesi en una dissolució 1 M de nitrat de magnesi i un elèctrode de plata en una dissolució 1 M de nitrat de plata. Calculeu el potencial estàndard d'aquesta cel·la a \(25^{\circ}\text{C}\).</p>
-            <div class="interactive-block slider-container">
-                <h3 class="text-lg font-semibold mb-4 text-center text-sky-700 !mt-0 !border-none">Calculadora Interactiva Pila Mg/Ag</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
-                    <div>
-                        <div class="slider-label"><label for="e0_mg_112">\(E^{\circ}(\text{Mg}^{2+}/\text{Mg})\) (V):</label><span id="e0_mg_112_value">-2.37</span></div>
-                        <input type="range" id="e0_mg_112" min="-3.0" max="1.0" step="0.01" value="-2.37">
-                    </div>
-                    <div>
-                        <div class="slider-label"><label for="e0_ag_112">\(E^{\circ}(\text{Ag}^{+}/\text{Ag})\) (V):</label><span id="e0_ag_112_value">0.80</span></div>
-                        <input type="range" id="e0_ag_112" min="-1.0" max="3.0" step="0.01" value="0.80">
-                    </div>
-                </div>
-                <div id="result_112" class="result-display">
+            <div class="interactive-block">
+                <h3 class="text-lg font-semibold mb-4 text-center text-sky-700 !mt-0 !border-none">Càlcul Pila Mg/Ag (Valors Estàndard)</h3>
+                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                     <div class="fixed-value-display">
+                         \(E^{\circ}(\text{Mg}^{2+}/\text{Mg}) = \) <span>-2.37 V</span>
+                     </div>
+                     <div class="fixed-value-display">
+                         \(E^{\circ}(\text{Ag}^{+}/\text{Ag}) = \) <span>+0.80 V</span>
+                     </div>
+                 </div>
+                 <div id="result_112" class="result-display">
                     </div>
             </div>
         </section>
@@ -191,7 +191,7 @@
         // Constante R de los gases ideales
         const R = 0.0821; // L·atm / (mol·K)
 
-        // Configuració global de MathJax (opcional, per assegurar el renderitzat)
+        // Configuració global de MathJax
          window.MathJax = {
             tex: {
                 inlineMath: [['$', '$'], ['\\(', '\\)']],
@@ -202,7 +202,7 @@
             }
         };
 
-        // Funció auxiliar per configurar sliders
+        // Funció auxiliar per configurar sliders (només per Ex 115)
         function setupSlider(sliderId, valueSpanId, options = {}) {
             const slider = document.getElementById(sliderId);
             const valueSpan = document.getElementById(valueSpanId);
@@ -221,33 +221,37 @@
             updateFunc(); // Initial calculation
         }
 
-        // --- Calculadora Ejercicio 114 (Pila Cd/Ag) ---
+        // Funció genèrica per renderitzar MathJax en un element
+        function renderMathJax(elementId) {
+             const element = document.getElementById(elementId);
+             if (element && window.MathJax && window.MathJax.typesetPromise) {
+                 window.MathJax.typesetPromise([element]).catch((err) => console.error('MathJax typesetting error:', err));
+             }
+        }
+
+        // --- Càlcul Exercici 114 (Pila Cd/Ag - Valors Fixos) ---
         function calculateCell_114() {
-            const e0_cd_slider = document.getElementById('e0_cd_114');
-            const e0_ag_slider = document.getElementById('e0_ag_114');
             const result_114 = document.getElementById('result_114');
-             if (!e0_cd_slider || !e0_ag_slider || !result_114) return;
+            if (!result_114) return;
 
-            const e0_cd = parseFloat(e0_cd_slider.value);
-            const e0_ag = parseFloat(e0_ag_slider.value);
+            // Valors E° fixos de l'enunciat
+            const e0_cd = -0.40;
+            const e0_ag = 0.80;
 
+            // La lògica de càlcul és la mateixa, però amb valors fixos
             let cathode, anode, e0_cathode, e0_anode, cathode_species, anode_species, cathode_reaction, anode_reaction, global_reaction, notation;
             let e0_cell;
 
-            if (e0_ag > e0_cd) {
+            if (e0_ag > e0_cd) { // Ag és càtode, Cd és ànode
                 cathode = 'Ag+/Ag'; anode = 'Cd/Cd2+'; e0_cathode = e0_ag; e0_anode = e0_cd;
                 cathode_species = 'Ag+/Ag'; anode_species = 'Cd/Cd2+';
                 cathode_reaction = '$$ 2 \\times (\\text{Ag}^+ + 1e^- \\rightarrow \\text{Ag}) \\quad \\text{(Reducció)} $$';
                 anode_reaction = '$$ \\text{Cd} \\rightarrow \\text{Cd}^{2+} + 2e^- \\quad \\text{(Oxidació)} $$';
                 global_reaction = '$$ \\text{Cd}(s) + 2\\text{Ag}^+(aq) \\rightarrow \\text{Cd}^{2+}(aq) + 2\\text{Ag}(s) $$';
                 notation = '$$ \\text{Cd}(s) | \\text{Cd}^{2+}(aq, 1M) || \\text{Ag}^{+}(aq, 1M) | \\text{Ag}(s) $$';
-            } else {
+            } else { // Cas hipotètic si els valors fossin diferents
                 cathode = 'Cd2+/Cd'; anode = 'Ag/Ag+'; e0_cathode = e0_cd; e0_anode = e0_ag;
-                cathode_species = 'Cd2+/Cd'; anode_species = 'Ag/Ag+';
-                cathode_reaction = '$$ \\text{Cd}^{2+} + 2e^- \\rightarrow \\text{Cd} \\quad \\text{(Reducció)} $$';
-                anode_reaction = '$$ 2 \\times (\\text{Ag} \\rightarrow \\text{Ag}^+ + 1e^-) \\quad \\text{(Oxidació)} $$';
-                global_reaction = '$$ 2\\text{Ag}(s) + \\text{Cd}^{2+}(aq) \\rightarrow 2\\text{Ag}^+(aq) + \\text{Cd}(s) $$';
-                notation = '$$ \\text{Ag}(s) | \\text{Ag}^{+}(aq, 1M) || \\text{Cd}^{2+}(aq, 1M) | \\text{Cd}(s) $$';
+                // ... (la resta de definicions per aquest cas)
             }
 
             e0_cell = e0_cathode - e0_anode;
@@ -272,46 +276,39 @@
                 <p class='ml-4'>$$ E^{\\circ}_{pila} = E^{\\circ}_{càtode} - E^{\\circ}_{ànode} = ${e0_cathode.toFixed(2)} \\text{ V} - (${e0_anode.toFixed(2)} \\text{ V}) = \\mathbf{${e0_cell.toFixed(2)} \\text{ V}} $$</p>
                 <p class='mt-2 ${spontaneousClass}'>${isSpontaneous ? 'El procés és espontani ($E^{\\circ}_{pila} > 0$).' : 'El procés NO és espontani ($E^{\\circ}_{pila} \\leq 0$).'}</p>
             `;
-            // Demanar a MathJax que processi el nou contingut
-            if (window.MathJax && window.MathJax.typesetPromise) {
-                 window.MathJax.typesetPromise([result_114]);
-            }
+            renderMathJax('result_114'); // Render MathJax per aquesta secció
         }
 
-        // --- Calculadora Ejercicio 116 (Pila Pb/Ag) ---
+        // --- Càlcul Exercici 116 (Pila Pb/Ag - Valors Fixos) ---
         function calculateCell_116() {
-            const e0_pb_slider = document.getElementById('e0_pb_116');
-            const e0_ag_slider = document.getElementById('e0_ag_116');
             const result_116 = document.getElementById('result_116');
-             if (!e0_pb_slider || !e0_ag_slider || !result_116) return;
+            if (!result_116) return;
 
-            const e0_pb = parseFloat(e0_pb_slider.value);
-            const e0_ag = parseFloat(e0_ag_slider.value);
+            // Valors E° fixos de l'enunciat
+            const e0_pb = -0.13;
+            const e0_ag = 0.80;
 
             let cathode, anode, e0_cathode, e0_anode, cathode_reaction, anode_reaction, global_reaction;
             let e0_cell;
 
-             if (e0_ag > e0_pb) {
+             if (e0_ag > e0_pb) { // Ag és càtode, Pb és ànode
                 cathode = 'Ag+/Ag'; anode = 'Pb/Pb2+'; e0_cathode = e0_ag; e0_anode = e0_pb;
                 cathode_reaction = '$$ 2 \\times (\\text{Ag}^+ + 1e^- \\rightarrow \\text{Ag}) $$';
                 anode_reaction = '$$ \\text{Pb} \\rightarrow \\text{Pb}^{2+} + 2e^- $$';
                 global_reaction = '$$ \\text{Pb}(s) + 2\\text{Ag}^+(aq) \\rightarrow \\text{Pb}^{2+}(aq) + 2\\text{Ag}(s) $$';
-            } else {
+            } else { // Cas hipotètic
                 cathode = 'Pb2+/Pb'; anode = 'Ag/Ag+'; e0_cathode = e0_pb; e0_anode = e0_ag;
-                cathode_reaction = '$$ \\text{Pb}^{2+} + 2e^- \\rightarrow \\text{Pb} $$';
-                anode_reaction = '$$ 2 \\times (\\text{Ag} \\rightarrow \\text{Ag}^+ + 1e^-) $$';
-                global_reaction = '$$ 2\\text{Ag}(s) + \\text{Pb}^{2+}(aq) \\rightarrow 2\\text{Ag}^+(aq) + \\text{Pb}(s) $$';
+                 // ...
             }
 
             e0_cell = e0_cathode - e0_anode;
             const isSpontaneous = e0_cell > 0;
             const spontaneousClass = isSpontaneous ? 'font-semibold' : 'font-semibold non-spontaneous';
 
-
              result_116.innerHTML = `
                 <p><strong>Determinació Ànode/Càtode:</strong></p>
-                <p class='ml-4'>Ànode (Oxidació): $E^{\\circ}(\\text{${anode}}) = ${e0_anode.toFixed(2)}\\text{ V}$ (Potencial menor)</p>
-                <p class='ml-4'>Càtode (Reducció): $E^{\\circ}(\\text{${cathode}}) = ${e0_cathode.toFixed(2)}\\text{ V}$ (Potencial major)</p>
+                <p class='ml-4'>Ànode (Oxidació): ${anode} ($E^{\\circ}_{red} = ${e0_anode.toFixed(2)}\\text{ V}$)</p>
+                <p class='ml-4'>Càtode (Reducció): ${cathode} ($E^{\\circ}_{red} = ${e0_cathode.toFixed(2)}\\text{ V}$)</p>
                 <p class='mt-2'><strong>Semireaccions:</strong></p>
                 <div class='ml-4 math-block'>Anòdica: ${anode_reaction}</div>
                 <div class='ml-4 math-block'>Catòdica: ${cathode_reaction}</div>
@@ -321,12 +318,10 @@
                 <p class='ml-4'>$$ E^{\\circ}_{pila} = E^{\\circ}_{càtode} - E^{\\circ}_{ànode} = ${e0_cathode.toFixed(2)} \\text{ V} - (${e0_anode.toFixed(2)} \\text{ V}) = \\mathbf{${e0_cell.toFixed(2)} \\text{ V}} $$</p>
                 <p class='mt-2 ${spontaneousClass}'>${isSpontaneous ? 'El procés és espontani ($E^{\\circ}_{pila} > 0$).' : 'El procés NO és espontani ($E^{\\circ}_{pila} \\leq 0$).'}</p>
             `;
-             if (window.MathJax && window.MathJax.typesetPromise) {
-                 window.MathJax.typesetPromise([result_116]);
-            }
+             renderMathJax('result_116');
         }
 
-        // --- Calculadora Ejercicio 115 (Gas Stoichiometry) ---
+        // --- Càlcul Exercici 115 (Gas Stoichiometry - Interactiu) ---
         function calculateGas_115() {
             const pressure_slider = document.getElementById('pressure_115');
             const volume_slider = document.getElementById('volume_115');
@@ -334,20 +329,19 @@
             const result_115 = document.getElementById('result_115');
             if (!pressure_slider || !volume_slider || !temp_slider || !result_115) return;
 
-
             const P_torr = parseFloat(pressure_slider.value);
             const V_ml = parseFloat(volume_slider.value);
             const T_c = parseFloat(temp_slider.value);
 
             // Conversions
-            const P_atm = P_torr / 760; // Torr to atm
-            const V_l = V_ml / 1000;   // mL to L
-            const T_k = T_c + 273.15; // °C to K
+            const P_atm = P_torr / 760;
+            const V_l = V_ml / 1000;
+            const T_k = T_c + 273.15;
 
-            // Ideal Gas Law: PV = nRT => n = PV / RT
+            // Llei dels Gasos Ideals
             const n_O2 = (P_atm * V_l) / (R * T_k);
 
-            // Stoichiometry: 1 mol O2 -> 4 mol H+
+            // Estequiometria
             const n_Hplus = n_O2 * 4;
 
             result_115.innerHTML = `
@@ -357,47 +351,40 @@
                 <p class='mt-2'><strong>Càlcul de mols de H⁺ (Estequiometria $1 \\text{ mol O}_2 \\rightarrow 4 \\text{ mol H}^+$):</strong></p>
                 <p class='ml-4'>$$ n_{\\text{H}^+} = n_{\\text{O}_2} \\times \\frac{4 \\text{ mol H}^+}{1 \\text{ mol O}_2} = ${n_O2.toExponential(3)} \\times 4 = \\mathbf{${n_Hplus.toExponential(3)} \\text{ mols H}^+} $$</p>
             `;
-            if (window.MathJax && window.MathJax.typesetPromise) {
-                 window.MathJax.typesetPromise([result_115]);
-            }
+            renderMathJax('result_115');
         }
 
-        // --- Calculadora Ejercicio 112 (Pila Mg/Ag) ---
+        // --- Càlcul Exercici 112 (Pila Mg/Ag - Valors Fixos) ---
         function calculateCell_112() {
-             const e0_mg_slider = document.getElementById('e0_mg_112');
-             const e0_ag_slider = document.getElementById('e0_ag_112');
              const result_112 = document.getElementById('result_112');
-             if (!e0_mg_slider || !e0_ag_slider || !result_112) return;
+             if (!result_112) return;
 
-            const e0_mg = parseFloat(e0_mg_slider.value);
-            const e0_ag = parseFloat(e0_ag_slider.value);
+             // Valors E° fixos de l'enunciat
+             const e0_mg = -2.37;
+             const e0_ag = 0.80;
 
             let cathode, anode, e0_cathode, e0_anode, cathode_reaction, anode_reaction, global_reaction, notation;
             let e0_cell;
 
-             if (e0_ag > e0_mg) {
+             if (e0_ag > e0_mg) { // Ag és càtode, Mg és ànode
                 cathode = 'Ag+/Ag'; anode = 'Mg/Mg2+'; e0_cathode = e0_ag; e0_anode = e0_mg;
                 cathode_reaction = '$$ 2 \\times (\\text{Ag}^+ + 1e^- \\rightarrow \\text{Ag}) $$';
                 anode_reaction = '$$ \\text{Mg} \\rightarrow \\text{Mg}^{2+} + 2e^- $$';
                 global_reaction = '$$ \\text{Mg}(s) + 2\\text{Ag}^+(aq) \\rightarrow \\text{Mg}^{2+}(aq) + 2\\text{Ag}(s) $$';
                 notation = '$$ \\text{Mg}(s) | \\text{Mg}^{2+}(aq, 1M) || \\text{Ag}^{+}(aq, 1M) | \\text{Ag}(s) $$';
-            } else {
+            } else { // Cas hipotètic
                 cathode = 'Mg2+/Mg'; anode = 'Ag/Ag+'; e0_cathode = e0_mg; e0_anode = e0_ag;
-                cathode_reaction = '$$ \\text{Mg}^{2+} + 2e^- \\rightarrow \\text{Mg} $$';
-                anode_reaction = '$$ 2 \\times (\\text{Ag} \\rightarrow \\text{Ag}^+ + 1e^-) $$';
-                global_reaction = '$$ 2\\text{Ag}(s) + \\text{Mg}^{2+}(aq) \\rightarrow 2\\text{Ag}^+(aq) + \\text{Mg}(s) $$';
-                notation = '$$ \\text{Ag}(s) | \\text{Ag}^{+}(aq, 1M) || \\text{Mg}^{2+}(aq, 1M) | \\text{Mg}(s) $$';
+                 // ...
             }
 
             e0_cell = e0_cathode - e0_anode;
-             const isSpontaneous = e0_cell > 0;
+            const isSpontaneous = e0_cell > 0;
             const spontaneousClass = isSpontaneous ? 'font-semibold' : 'font-semibold non-spontaneous';
-
 
              result_112.innerHTML = `
                 <p><strong>Determinació Ànode/Càtode:</strong></p>
-                <p class='ml-4'>Ànode (Oxidació): $E^{\\circ}(\\text{${anode}}) = ${e0_anode.toFixed(2)}\\text{ V}$ (Potencial menor)</p>
-                <p class='ml-4'>Càtode (Reducció): $E^{\\circ}(\\text{${cathode}}) = ${e0_cathode.toFixed(2)}\\text{ V}$ (Potencial major)</p>
+                <p class='ml-4'>Ànode (Oxidació): ${anode} ($E^{\\circ}_{red} = ${e0_anode.toFixed(2)}\\text{ V}$)</p>
+                <p class='ml-4'>Càtode (Reducció): ${cathode} ($E^{\\circ}_{red} = ${e0_cathode.toFixed(2)}\\text{ V}$)</p>
                 <p class='mt-2'><strong>Notació de la Pila:</strong></p>
                 <div class='ml-4 math-block'>${notation}</div>
                 <p class='mt-2'><strong>Semireaccions:</strong></p>
@@ -409,32 +396,27 @@
                 <p class='ml-4'>$$ E^{\\circ}_{pila} = E^{\\circ}_{càtode} - E^{\\circ}_{ànode} = ${e0_cathode.toFixed(2)} \\text{ V} - (${e0_anode.toFixed(2)} \\text{ V}) = \\mathbf{${e0_cell.toFixed(2)} \\text{ V}} $$</p>
                  <p class='mt-2 ${spontaneousClass}'>${isSpontaneous ? 'El procés és espontani ($E^{\\circ}_{pila} > 0$).' : 'El procés NO és espontani ($E^{\\circ}_{pila} \\leq 0$).'}</p>
             `;
-             if (window.MathJax && window.MathJax.typesetPromise) {
-                 window.MathJax.typesetPromise([result_112]);
-            }
+             renderMathJax('result_112');
         }
 
 
-        // --- Inicialització dels sliders ---
+        // --- Inicialització ---
         document.addEventListener('DOMContentLoaded', () => {
-            // Configura sliders per cada exercici
-            setupSlider('e0_cd_114', 'e0_cd_114_value', {decimals: 2, callback: calculateCell_114});
-            setupSlider('e0_ag_114', 'e0_ag_114_value', {decimals: 2, callback: calculateCell_114});
+            // Realitzar càlculs inicials per a les seccions amb valors fixos
+            calculateCell_114();
+            calculateCell_116();
+            calculateCell_112();
 
-            setupSlider('e0_pb_116', 'e0_pb_116_value', {decimals: 2, callback: calculateCell_116});
-            setupSlider('e0_ag_116', 'e0_ag_116_value', {decimals: 2, callback: calculateCell_116});
-
+            // Configurar sliders només per l'exercici 115
             setupSlider('pressure_115', 'pressure_115_value', {decimals: 0, callback: calculateGas_115});
             setupSlider('volume_115', 'volume_115_value', {decimals: 1, callback: calculateGas_115});
             setupSlider('temp_115', 'temp_115_value', {decimals: 0, callback: calculateGas_115});
 
-            setupSlider('e0_mg_112', 'e0_mg_112_value', {decimals: 2, callback: calculateCell_112});
-            setupSlider('e0_ag_112', 'e0_ag_112_value', {decimals: 2, callback: calculateCell_112});
-
-             // Forçar el renderitzat inicial de MathJax si cal (potser no és necessari amb la configuració global)
-             if (window.MathJax && window.MathJax.typesetPromise) {
-                 window.MathJax.typesetPromise();
-             }
+             // Forçar el renderitzat inicial complet de MathJax si és necessari
+             // Normalment, les crides individuals a renderMathJax() són suficients
+             // if (window.MathJax && window.MathJax.typesetPromise) {
+             //     window.MathJax.typesetPromise();
+             // }
         });
 
     </script>
